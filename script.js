@@ -2,112 +2,185 @@ window.addEventListener("load", () => {
   document.getElementById("cover").scrollIntoView({ behavior: "smooth" });
 });
 
-const teams = {
-  ceo: [
-    {
-      role: "CEO",
-      nama: "Tarzz",
-      alamat: "Sidoarjo",
-      telp: "0812-XXXX-XXXX",
-      kelas: "VIII SMP",
-      foto: "assets/7arzz.jpg",
-    },
-    {
-      role: "Sekretaris",
-      nama: "Tarzz",
-      alamat: "Sidoarjo",
-      telp: "0812-XXXX-XXXX",
-      kelas: "VIII SMP",
-      foto: "assets/7arzz.jpg",
-    },
-  ],
-  marketing: [
-    {
-      role: "Direktur Marketing",
-      nama: "Andi",
-      alamat: "Surabaya",
-      telp: "0812-3456-7890",
-      kelas: "VIII SMP",
-      foto: "assets/7arzz.jpg",
-    },
-    {
-      role: "Manager Marketing",
-      nama: "Budi",
-      alamat: "Sidoarjo",
-      telp: "0822-9876-5432",
-      kelas: "IX SMP",
-      foto: "assets/7arzz.jpg",
-    },
-    {
-      role: "Tim Marketing",
-      nama: "Citra",
-      alamat: "Gresik",
-      telp: "0856-1111-2222",
-      kelas: "VIII SMP",
-      foto: "assets/7arzz.jpg",
-    },
-  ],
-  finance: [
-    {
-      role: "Direktur Finance",
-      nama: "Farhan",
-      alamat: "Surabaya",
-      telp: "0812-1111-2222",
-      kelas: "IX SMP",
-      foto: "assets/7arzz.jpg",
-    },
-    {
-      role: "Manager Finance",
-      nama: "Rina",
-      alamat: "Sidoarjo",
-      telp: "0822-3333-4444",
-      kelas: "VIII SMP",
-      foto: "assets/7arzz.jpg",
-    },
-    {
-      role: "Tim Finance",
-      nama: "Dika",
-      alamat: "Gresik",
-      telp: "0856-5555-6666",
-      kelas: "VIII SMP",
-      foto: "assets/7arzz.jpg",
-    },
-  ],
-};
+const teams = [
+  {
+    role: "Anggota",
+    nama: "Shiva Shavira",
+    alamat: "Balongdowo",
+    kelas: "X AK-3",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Widya Pramundita Putri",
+    alamat: "Waru",
+    kelas: "X AK-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Wilujeng Naisilah Chusnul Pratama",
+    alamat: "Magersari",
+    kelas: "X AK-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Abimanyu Yoga Perdana",
+    alamat: "Magersari",
+    kelas: "X BD-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Rimarcha Dwi Fellysia",
+    alamat: "Rangkah Kidul",
+    kelas: "X BD-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Wahyu Siva Ayuningtyas",
+    alamat: "Buduran",
+    kelas: "X BD-1",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Dian Maulida",
+    alamat: "Sidokare",
+    kelas: "X BD-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Alfina Amoerita Anggraini",
+    alamat: "Gedangan",
+    kelas: "X BD-1",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Ardina Mozarella",
+    alamat: "Candi",
+    kelas: "X MP-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Shafa Aliyah Re",
+    alamat: "Sidodadi",
+    kelas: "X BD-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Keyla Nur Azizah Putriani",
+    alamat: "Bluru Permai",
+    kelas: "X AK-1",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Della Savira Damayanti",
+    alamat: "Buduran",
+    kelas: "X BD-1",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Khansa Aisya Zhafira",
+    alamat: "Siwalanpanji",
+    kelas: "X AK-1",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Arika Rahmasari",
+    alamat: "Rangkah Lor",
+    kelas: "X BD-1",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Rina Anggraini",
+    alamat: "Balong Gabus",
+    kelas: "X BD-2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Nayra Salsabilla",
+    alamat: "Celep, Sidowayah",
+    kelas: "X MP-1",
+    foto: "assets/7arzz.jpg",
+  },
+];
 
 const container = document.getElementById("teamContainer");
 
-for (const dept in teams) {
-  teams[dept].forEach((person) => {
-    const div = document.createElement("div");
-    div.className = "col-md-4 col-sm-6";
+teams.forEach((person) => {
+  const div = document.createElement("div");
+  div.className = "col-md-4 col-sm-6 mb-4";
 
-    div.innerHTML = `
-      <div class="card team-card p-3 shadow-sm">
-        <img src="${person.foto}" class="mx-auto mb-3" width="120" height="120" alt="${person.role}">
-        <h5 class="fw-bold fs-3">${person.role}</h5>
-        <div class="info">
-          <p class="fw-bold fs-5" ><b>Nama:</b> ${person.nama}</p>
-          <p class="fw-bold fs-5" ><b>Alamat:</b> ${person.alamat}</p>
-          <p class="fw-bold fs-5" ><b>No Telepon:</b> ${person.telp}</p>
-          <p class="fw-bold fs-5" ><b>Kelas:</b> ${person.kelas}</p>
-        </div>
+  div.innerHTML = `
+    <div class="card team-card p-3 shadow-sm">
+      <img src="${person.foto}" class="mx-auto mb-3" width="120" height="120" alt="${person.role}">
+      <h5 class="fw-bold fs-3">${person.role}</h5>
+      <div class="info">
+        <p><b>Nama:</b> ${person.nama}</p>
+        <p><b>Alamat:</b> ${person.alamat}</p>
+        <p><b>Kelas:</b> ${person.kelas}</p>
       </div>
-    `;
+    </div>
+  `;
 
-    const card = div.querySelector(".card");
-    const infoDiv = div.querySelector(".info");
+  const card = div.querySelector(".card");
+  const infoDiv = div.querySelector(".info");
 
-    card.onclick = () => {
-      if (infoDiv.style.display === "block") {
-        infoDiv.style.opacity = "0";
-        setTimeout(() => (infoDiv.style.display = "none"), 400);
-      } else {
-        infoDiv.style.display = "block";
-        setTimeout(() => (infoDiv.style.opacity = "1"), 4);
-      }
-    };
+  infoDiv.style.transition = "all 0.5s ease";
+  infoDiv.style.maxHeight = "0";
+  infoDiv.style.opacity = "0";
+  infoDiv.style.overflow = "hidden";
 
-    container.appendChild(div);
+  card.addEventListener("click", () => {
+    const isOpen = infoDiv.classList.contains("open");
+
+    if (isOpen) {
+      infoDiv.classList.remove("open");
+      infoDiv.style.maxHeight = "0";
+      infoDiv.style.opacity = "0";
+    } else {
+      infoDiv.classList.add("open");
+      infoDiv.style.maxHeight = infoDiv.scrollHeight + "px";
+      infoDiv.style.opacity = "1";
+    }
   });
+
+  container.appendChild(div);
+});
+
+// Scroll animation
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach((sec) => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      sec.classList.add("visible");
+    }
+  });
+});
+
+// Leaf animation generator
+const leafContainer = document.getElementById("leafContainer");
+function createLeaf() {
+  const leaf = document.createElement("div");
+  leaf.classList.add("leaf");
+  leaf.style.left = Math.random() * 100 + "vw";
+  leaf.style.animationDuration = 6 + Math.random() * 4 + "s";
+  leaf.style.opacity = Math.random();
+  leafContainer.appendChild(leaf);
+
+  setTimeout(() => leaf.remove(), 10000);
 }
+setInterval(createLeaf, 700);
