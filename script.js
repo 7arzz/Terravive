@@ -1,7 +1,8 @@
 window.addEventListener("load", () => {
-  document.getElementById("cover").scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 2500); // scroll ke atas 2.5 detik setelah halaman siap
 });
-
 const teams = [
   {
     role: "Anggota",
