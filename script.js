@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
   setTimeout(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, 2500); // scroll ke atas 2.5 detik setelah halaman siap
+  }, 3000); // scroll ke atas 3 detik setelah halaman siap
 });
 const teams = [
   {
@@ -172,16 +172,54 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Leaf animation generator
-const leafContainer = document.getElementById("leafContainer");
-function createLeaf() {
-  const leaf = document.createElement("div");
-  leaf.classList.add("leaf");
-  leaf.style.left = Math.random() * 100 + "vw";
-  leaf.style.animationDuration = 6 + Math.random() * 4 + "s";
-  leaf.style.opacity = Math.random();
-  leafContainer.appendChild(leaf);
+const texts = [
+  "Initializing system...",
+  "Connecting AI...",
+  "Calibrating tumbler data...",
+  "Optimizing data...",
+  "Welcome to GrowVia!",
+];
 
-  setTimeout(() => leaf.remove(), 10000);
-}
-setInterval(createLeaf, 700);
+window.addEventListener("load", () => {
+  const loading = document.getElementById("loading");
+  const loadingText = document.querySelector("#loading p");
+  let index = 0;
+  let charIndex = 0;
+
+  function typeText() {
+    if (charIndex < texts[index].length) {
+      loadingText.textContent += texts[index].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeText, 60); // kecepatan ketik halus
+    } else {
+      // jeda antar kalimat biar lebih natural
+      setTimeout(() => {
+        loadingText.style.transition = "opacity 0.6s ease";
+        loadingText.style.opacity = "0";
+
+        setTimeout(() => {
+          charIndex = 0;
+          index++;
+
+          if (index < texts.length) {
+            // lanjut ke kalimat berikut
+            loadingText.textContent = "";
+            loadingText.style.opacity = "1";
+            setTimeout(typeText, 200); // delay dikit biar smooth
+          } else {
+            // animasi keluar dari loading
+            loading.style.transition = "opacity 1s ease, transform 1s ease";
+            loading.style.opacity = "0";
+            loading.style.transform = "scale(1.05)";
+            setTimeout(() => {
+              loading.style.display = "none";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 1000);
+          }
+        }, 600);
+      }, 900);
+    }
+  }
+
+  typeText();
+});
