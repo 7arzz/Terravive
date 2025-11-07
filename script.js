@@ -116,6 +116,27 @@ const teams = [
     kelas: "X MP-1",
     foto: "assets/7arzz.jpg",
   },
+  {
+    role: "Anggota | Developer",
+    nama: "Andaru Ilham Amerta",
+    alamat: "Bangsri, Sukodono",
+    kelas: "X-RPL",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Geisya Odelia Bagus",
+    alamat: "jl  krembangan, kemiri",
+    kelas: "X DKV 2",
+    foto: "assets/7arzz.jpg",
+  },
+  {
+    role: "Anggota",
+    nama: "Audrey Zahra Amaura",
+    alamat: "Desa bluru kidul, Pondok Buana",
+    kelas: "X DKV 3",
+    foto: "assets/7arzz.jpg",
+  },
 ];
 
 const container = document.getElementById("teamContainer");
@@ -125,13 +146,13 @@ teams.forEach((person) => {
   div.className = "col-md-4 col-sm-6 mb-4";
 
   div.innerHTML = `
-    <div class="card team-card p-3 shadow-sm">
-      <img src="${person.foto}" class="mx-auto mb-3" width="120" height="120" alt="${person.role}">
+    <div class="card team-card p-3 shadow-sm data-aos="zoom-out-down"">
+      <img src="${person.foto}" class="mx-auto mb-3 img-fluid rounded-circle" width="120" height="120" alt="${person.role}">
       <h5 class="fw-bold fs-3">${person.role}</h5>
       <div class="info">
-        <p><b>Nama:</b> ${person.nama}</p>
-        <p><b>Alamat:</b> ${person.alamat}</p>
-        <p><b>Kelas:</b> ${person.kelas}</p>
+        <p><strong>Nama:</strong> ${person.nama}</p>
+        <p><strong>Alamat:</strong> ${person.alamat}</p>
+        <p><strong>Kelas:</strong> ${person.kelas}</p>
       </div>
     </div>
   `;
@@ -175,9 +196,9 @@ window.addEventListener("scroll", () => {
 const texts = [
   "Initializing system...",
   "Connecting AI...",
-  "Calibrating tumbler data...",
+  "Calibrating data...",
   "Optimizing data...",
-  "Welcome to GrowVia!",
+  "Welcome to Artheva!",
 ];
 
 window.addEventListener("load", () => {
@@ -190,7 +211,7 @@ window.addEventListener("load", () => {
     if (charIndex < texts[index].length) {
       loadingText.textContent += texts[index].charAt(charIndex);
       charIndex++;
-      setTimeout(typeText, 60); // kecepatan ketik halus
+      setTimeout(typeText, 80); // kecepatan ketik halus
     } else {
       // jeda antar kalimat biar lebih natural
       setTimeout(() => {
@@ -205,7 +226,7 @@ window.addEventListener("load", () => {
             // lanjut ke kalimat berikut
             loadingText.textContent = "";
             loadingText.style.opacity = "1";
-            setTimeout(typeText, 200); // delay dikit biar smooth
+            setTimeout(typeText, 500); // delay dikit biar smooth
           } else {
             // animasi keluar dari loading
             loading.style.transition = "opacity 1s ease, transform 1s ease";
