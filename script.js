@@ -197,7 +197,7 @@ const texts = [
   "Initializing system...",
   "Connecting AI...",
   "Optimizing data...",
-  "Welcome to Artheva!",
+  "Welcome to Terravive!",
 ];
 
 window.addEventListener("load", () => {
