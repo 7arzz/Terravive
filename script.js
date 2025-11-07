@@ -244,3 +244,5 @@ window.addEventListener("load", () => {
 
   typeText();
 });
+
+AOS.init();
