@@ -196,7 +196,6 @@ window.addEventListener("scroll", () => {
 const texts = [
   "Initializing system...",
   "Connecting AI...",
-  "Calibrating data...",
   "Optimizing data...",
   "Welcome to Artheva!",
 ];
@@ -211,7 +210,7 @@ window.addEventListener("load", () => {
     if (charIndex < texts[index].length) {
       loadingText.textContent += texts[index].charAt(charIndex);
       charIndex++;
-      setTimeout(typeText, 80); // kecepatan ketik halus
+      setTimeout(typeText, 40); // kecepatan ketik halus
     } else {
       // jeda antar kalimat biar lebih natural
       setTimeout(() => {
@@ -226,7 +225,7 @@ window.addEventListener("load", () => {
             // lanjut ke kalimat berikut
             loadingText.textContent = "";
             loadingText.style.opacity = "1";
-            setTimeout(typeText, 500); // delay dikit biar smooth
+            setTimeout(typeText, 350); // delay dikit biar smooth
           } else {
             // animasi keluar dari loading
             loading.style.transition = "opacity 1s ease, transform 1s ease";
